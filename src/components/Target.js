@@ -1,13 +1,13 @@
-const Target = (boxConfig, state) => {
+const Target = (targetConfig, state) => {
 
-    const {width, height, textSize} = boxConfig;
-    const { boxX, boxY, color} = state;
+    const {width, height, textSize} = targetConfig;
+    const { targetX, targetY, color} = state;
 
     const style = {
         height: `${ height }%`,
         width: `${ width }%`,
-        top: `${ boxY }%`,
-        left: `${ boxX }%`,
+        top: `${ targetY }%`,
+        left: `${ targetX }%`,
         position: "absolute",
         fontSize: textSize,
         background: color,
