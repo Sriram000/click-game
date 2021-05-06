@@ -12,10 +12,9 @@ function App() {
   
   const [state, setState] = useState({});
   global.state = state; //Hacky way to pass the state to services.
-  const actions = getActions(global, setState);
+  const actions = getActions(global, setState, targetConfig);
 
   useEffect(() => global.actions = game(targetConfig, global, setState), []);
-  console.log(global.actions);
 
   return (
     <div className="App">

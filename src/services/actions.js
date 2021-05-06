@@ -1,7 +1,8 @@
-const getActions = (global, setState) => {
+const getActions = (global, setState, targetConfig) => {
+    const { score } = targetConfig;
     const increaseScore = () => setState({
         ...global.state,
-        score: global.state.score + 1,
+        score: global.state.score + score,
     })
     
     return {

@@ -4,6 +4,7 @@ const targetConfig = {
     textSize: "16pt",
     colors: ["yellow", "khaki", "thistle"],
     delay: 1250,
+    score: 1,
 }
 
 export default targetConfig;
