@@ -1,7 +1,8 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Board from './components/Board.js';
 import targetConfig from '../src/data/config.js';
+import game from './services/game.js';
 
 const buttonStyle = {
   position: "absolute",
@@ -9,28 +10,18 @@ const buttonStyle = {
   left: "0%",
 }
 
-const { colors } = targetConfig;
+let next;
 
 function App() {
   
-  var randomBetween= function(min,max){
-    return Math.floor(Math.random() * (max - min + 1)) + min;
- }
-  
-  const [state, setState] = useState({ 
-    color: colors[0],
-    targetX: 50 - targetConfig.width / 2,
-    targetY: 50 - targetConfig.height / 2,
-  });
-  
-  const next = () => {
-    const randomNumber = randomBetween(0, colors.length - 1);
-    setState({ 
-      color: colors[randomNumber],
-      targetX: randomBetween(0, 100 - targetConfig.width),
-      targetY: randomBetween(0, 100 - targetConfig.height), 
-    });     
-  }
+  const [state, setState] = useState({});
+
+  console.log("Rendering");
+
+  useEffect(()=>{
+    next = game(targetConfig, setState);
+  }, []);
+
   return (
     <div className="App">
       { Board(targetConfig, state) }
