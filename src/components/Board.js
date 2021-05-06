@@ -1,6 +1,6 @@
 import Target from './Target.js';
 
-const Board = (targetConfig, state) => {
+const Board = (targetConfig, state, actions) => {
 
     const boardStyle = {
         height: "100%",
@@ -10,7 +10,7 @@ const Board = (targetConfig, state) => {
 
     return (
         <div style={ boardStyle }>
-            { Target(targetConfig, state) } 
+            { Target(targetConfig, state, actions) } 
         </div>
     );
 }

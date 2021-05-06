@@ -10,7 +10,7 @@ const game = (targetConfig, global, setState) => {
         targetY: 50 - targetConfig.height / 2,
         score: 0,
     });
-    
+
     const next = () => {
         const randomNumber = randomBetween(0, colors.length - 1);
 
