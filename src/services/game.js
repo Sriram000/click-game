@@ -2,8 +2,6 @@ import randomBetween from './lib.js';
 
 const game = (targetConfig, setState) => {
 
-    console.log("Starting");
-    
     const { colors, width, height } = targetConfig;
     
     setState({ 
@@ -20,8 +18,8 @@ const game = (targetConfig, setState) => {
             targetY: randomBetween(0, 100 - height), 
         });     
     }
-    
-    return next;
+
+    setInterval(next, 1000);
 }
 
 export default game;
