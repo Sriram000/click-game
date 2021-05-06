@@ -1,6 +1,6 @@
 const boxConfig = {
-    width: 10,
-    height: 10,
+    width: 50,
+    height: 50,
     textSize: "16pt",
 }
 

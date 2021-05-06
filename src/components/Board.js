@@ -6,26 +6,26 @@ var randomBetween= function(min,max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
  }
 
- const colors = ["yellow", "green", "purple"];
+const colors = ["yellow", "green", "purple"];
 
 const Board = (boxConfig) => {
 
     const [state, setState] = useState({ 
         color: colors[0],
-        boxX: 50,
-        boxY: 50,
+        boxX: 50 - boxConfig.width / 2,
+        boxY: 50 - boxConfig.height / 2,
     });
 
     const next = () => {
         const randomNumber = randomBetween(0, colors.length - 1);
         setState({ 
             color: colors[randomNumber],
-            boxX: randomBetween(0, 100),
-            boxY: randomBetween(0, 100), 
+            boxX: randomBetween(0, 100 - boxConfig.width),
+            boxY: randomBetween(0, 100 - boxConfig.height), 
         });     
     }
 
-    const style = {
+    const boardStyle = {
         height: "100%",
         width: "100%",
         position: "absolute",
@@ -38,10 +38,10 @@ const Board = (boxConfig) => {
     }
 
     return (
-        <div style={ style }>
-            <p> { state.color } </p>
+        <div style={ boardStyle }>
             { Target(boxConfig, state) } 
             { Marker() }
+            <p> { state.color } { state.boxX } { state.boxY } </p>
             <button onClick = { next } style = { buttonStyle }> Next </button> 
         </div>
     );
