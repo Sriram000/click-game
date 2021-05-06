@@ -2,7 +2,7 @@ import randomBetween from './lib.js';
 
 const game = (targetConfig, global, setState) => {
 
-    const { colors, width, height } = targetConfig;
+    const { colors, width, height, delay } = targetConfig;
     
     setState({ 
         color: colors[0],
@@ -22,7 +22,7 @@ const game = (targetConfig, global, setState) => {
         });     
     }
 
-    setInterval(next, 1000);
+    setInterval(next, delay);
 }
 
 export default game;

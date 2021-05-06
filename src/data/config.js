@@ -1,8 +1,9 @@
 const targetConfig = {
-    width: 50,
-    height: 50,
+    width: 10,
+    height: 10,
     textSize: "16pt",
-    colors: ["yellow", "green", "purple"],
+    colors: ["yellow", "khaki", "thistle"],
+    delay: 1250,
 }
 
 export default targetConfig;
