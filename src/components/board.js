@@ -4,7 +4,10 @@ const boardStyle = {
     width: "100%",
 }
 
-const Board = ({ actions }) => 
-    <div style={ boardStyle } onClick = { actions.decreaseScore }></div>
+const Board = (context) => 
+    <div
+        style={ boardStyle }
+        onClick = { () => context.actions.decreaseScore(context) }>
+    </div>
 
 export default Board;

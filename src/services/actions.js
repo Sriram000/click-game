@@ -1,19 +1,29 @@
-const getActions = (global, setState, targetConfig) => {
-    const { score } = targetConfig;
-    const increaseScore = () => setState({
-        ...global.state,
-        score: global.state.score + score,
-    })
+import randomBetween from './lib.js';
 
-    const decreaseScore = () => setState({
-        ...global.state,
-        score: global.state.score - score,
-    })
-    
-    return {
-        increaseScore,
-        decreaseScore,
-    }
+const increaseScore = ({ config, state, setState }) => setState({
+    ...state,
+    score: state.score + config.score,
+});
+
+const decreaseScore = ({ config, state, setState }) => setState({
+    ...state,
+    score: state.score - config.score,
+});
+
+const moveTarget = (context) => {
+    const { config, state, setState } = context;
+
+    setState({ 
+        ...state,
+        targetX: randomBetween(0, 100 - config.width),
+        targetY: randomBetween(0, 100 - config.height), 
+    });     
 }
 
-export default getActions;
+const actions = {
+    increaseScore,
+    decreaseScore,
+    moveTarget,
+};
+
+export default actions;

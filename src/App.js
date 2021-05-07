@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import getContext from './core/getContext.js';
+import config from '../src/data/config.js';
+import getInitialState from "./services/getInitialState.js";
+import actions from './services/actions.js';
+import start from './services/start.js';
 import Board from './components/board.js';
 import Target from './components/target.js';
-import targetConfig from '../src/data/config.js';
-import game from './services/game.js';
 import Score from './components/score';
-import getActions from './services/actions.js';
-
-const global = {};
 
 function App() {
-  
-  const [state, setState] = useState({});
-  global.state = state; //Hacky way to pass the state to services.
-  const actions = getActions(global, setState, targetConfig);
-  const context = { targetConfig, state, actions };
+  const [state, setState] = useState(getInitialState({ config }));
+  const context = getContext({ actions, config, state, setState });
 
-  useEffect(() => global.actions = game(targetConfig, global, setState), []);
+  useEffect(() => start(context), []);
 
   return (
     <div className="App">

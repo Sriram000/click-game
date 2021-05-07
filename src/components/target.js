@@ -1,9 +1,9 @@
 import background from '../image/mosquito.jpg';
 
-const Target = ({ targetConfig, state, actions }) => {
-    const {width, height } = targetConfig;
+const Target = (context) => {
+    const { config, state, actions } = context;
+    const { width, height } = config;
     const { targetX, targetY } = state;
-    const { increaseScore } = actions;
 
     const style = {
         position: "absolute",
@@ -14,7 +14,9 @@ const Target = ({ targetConfig, state, actions }) => {
     }
 
     return (
-        <img src= {background} style = {style} onClick = { increaseScore }/>        
+        <img src= {background}
+            style = {style}
+            onClick = { () => actions.increaseScore(context) }/>        
     );
 }
 
