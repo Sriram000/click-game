@@ -1,7 +1,6 @@
 import randomBetween from './lib.js';
 
 const game = (targetConfig, global, setState) => {
-
     const { width, height, delay } = targetConfig;
     
     setState({ 

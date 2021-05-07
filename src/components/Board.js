@@ -1,19 +1,10 @@
-import Target from './Target.js';
-
-const Board = (targetConfig, state, actions) => {
-
-    const { decreaseScore } = actions;
-
-    const boardStyle = {
-        height: "100%",
-        width: "100%",
-        position: "absolute",
-    }
-
-    return (
-        <div style={ boardStyle } onClick = { decreaseScore }>
-        </div>   
-    );
+const boardStyle = {
+    position: "absolute",
+    height: "100%",
+    width: "100%",
 }
+
+const Board = ({ actions }) => 
+    <div style={ boardStyle } onClick = { actions.decreaseScore }></div>
 
 export default Board;

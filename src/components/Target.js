@@ -1,17 +1,16 @@
 import background from '../image/mosquito.jpg';
 
-const Target = (targetConfig, state, actions) => {
-
+const Target = ({ targetConfig, state, actions }) => {
     const {width, height } = targetConfig;
     const { targetX, targetY } = state;
     const { increaseScore } = actions;
 
     const style = {
-        height: `${ height }%`,
-        width: `${ width }%`,
+        position: "absolute",
         top: `${ targetY }%`,
         left: `${ targetX }%`,
-        position: "absolute",
+        height: `${ height }%`,
+        width: `${ width }%`,
     }
 
     return (
