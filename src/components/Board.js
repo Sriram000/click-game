@@ -2,6 +2,8 @@ import Target from './Target.js';
 
 const Board = (targetConfig, state, actions) => {
 
+    const { decreaseScore } = actions;
+
     const boardStyle = {
         height: "100%",
         width: "100%",
@@ -9,9 +11,8 @@ const Board = (targetConfig, state, actions) => {
     }
 
     return (
-        <div style={ boardStyle }>
-            { Target(targetConfig, state, actions) } 
-        </div>
+        <div style={ boardStyle } onClick = { decreaseScore }>
+        </div>   
     );
 }
 

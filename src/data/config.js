@@ -3,7 +3,7 @@ const targetConfig = {
     height: 10,
     textSize: "16pt",
     colors: ["yellow", "khaki", "thistle"],
-    delay: 1250,
+    delay: 1000 * 1.25,
     score: 1,
 }
 

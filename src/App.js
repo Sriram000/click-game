@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import Board from './components/Board.js';
+import Target from './components/Target.js';
 import targetConfig from '../src/data/config.js';
 import game from './services/game.js';
 import Score from './components/score';
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App">
       { Board( targetConfig, state, actions ) }
+      { Target(targetConfig, state, actions) } 
       { Score( state )}
     </div>
     );

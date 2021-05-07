@@ -4,9 +4,15 @@ const getActions = (global, setState, targetConfig) => {
         ...global.state,
         score: global.state.score + score,
     })
+
+    const decreaseScore = () => setState({
+        ...global.state,
+        score: global.state.score - score,
+    })
     
     return {
         increaseScore,
+        decreaseScore,
     }
 }
 

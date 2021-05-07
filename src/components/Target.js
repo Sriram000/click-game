@@ -1,11 +1,8 @@
 const Target = (targetConfig, state, actions) => {
 
-    console.log(actions);
-
     const {width, height, textSize} = targetConfig;
     const { targetX, targetY, color} = state;
     const { increaseScore } = actions;
-    console.log(increaseScore);
 
     const style = {
         height: `${ height }%`,
@@ -18,7 +15,7 @@ const Target = (targetConfig, state, actions) => {
     }
 
     return (
-        <div style = {style} onClick = { increaseScore }> Click Me! </div>   
+        <div style = {style} onClick = { increaseScore }> </div>   
     );
 }
 
