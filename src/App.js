@@ -1,4 +1,3 @@
-import './App.css';
 import React, { useState, useEffect } from 'react';
 import Board from './components/Board.js';
 import Target from './components/Target.js';
