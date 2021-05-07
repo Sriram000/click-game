@@ -1,9 +1,13 @@
+const size = 10;
+
 const style = {
     position: "absolute",
     top: "50%",
     left: "50%",
-    height: "1px",
-    width: "1px",
+    height: `${ size }px`,
+    width:  `${ size }px`,
+    marginTop: `${ -size / 2 }px`,
+    marginLeft: `${ -size / 2 }px`,
     background: "red",
 }
 
