@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Board from './components/Board.js';
-import Target from './components/Target.js';
+import Board from './components/board.js';
+import Target from './components/target.js';
 import targetConfig from '../src/data/config.js';
 import game from './services/game.js';
 import Score from './components/score';
