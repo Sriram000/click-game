@@ -1,4 +1,4 @@
-import randomBetween from './lib.js';
+import { rndBetween } from "@laufire/utils/random";
 
 const increaseScore = ({ config, state }) => ({
     score: state.score + config.score,
@@ -9,8 +9,8 @@ const decreaseScore = ({ config, state }) => ({
 });
 
 const moveTarget = ({ config }) => ({ 
-    targetX: randomBetween(0, 100 - config.width),
-    targetY: randomBetween(0, 100 - config.height), 
+    targetX: rndBetween(0, 100 - config.width),
+    targetY: rndBetween(0, 100 - config.height), 
 });
 
 const actions = {
