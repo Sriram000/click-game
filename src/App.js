@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import getContext from './core/getContext.js';
+import context from "./core/context";
 import config from '../src/data/config.js';
 import getInitialState from "./services/getInitialState.js";
 import actions from './services/actions.js';
@@ -8,18 +9,19 @@ import Board from './components/board.js';
 import Target from './components/target.js';
 import Score from './components/score';
 
-function App() {
-  const [state, setState] = useState(getInitialState({ config }));
-  const context = getContext({ actions, config, state, setState });
+const iS = getInitialState({ config });
 
-  useEffect(() => start(context), []);
+function App() {
+  const [state, setState] = useState(iS);
+  getContext(context, { actions, config, state, setState });
+  useEffect(start, []);
 
   return (
-    <div className="App">
-      { Board(context) }
-      { Target(context) } 
-      { Score(context) }
-    </div>
+      <div className="App">
+        { Board() }
+        { Target() } 
+        { Score() }
+      </div>
     );
   }
   

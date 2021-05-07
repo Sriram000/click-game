@@ -1,6 +1,7 @@
+import context from "../core/context";
 import background from '../image/mosquito.jpg';
 
-const Target = (context) => {
+const Target = () => {
     const { config, state, actions } = context;
     const { width, height } = config;
     const { targetX, targetY } = state;
@@ -16,7 +17,7 @@ const Target = (context) => {
     return (
         <img src= {background}
             style = {style}
-            onClick = { () => actions.increaseScore(context) }/>        
+            onClick = { actions.increaseScore }/>        
     );
 }
 

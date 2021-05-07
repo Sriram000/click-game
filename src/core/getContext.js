@@ -1,13 +1,24 @@
-const getContext = (() => {
-  const store = {};
+//#NOTE: Context could both be imported or passed along.
 
-  return (inContext, name) => {
-    const context = store[name] = store[name] || inContext;
-    context.state = inContext.state;
-    context.setState = inContext.setState;
+import { map, merge } from "@laufire/utils/collection";
 
-    return context; 
-  }
-})();
+const updateContext = (context, accessories) => {
+  const { state, setState } = accessories;
+
+  context.state = state;
+  context.setState = setState;
+}
+const buildContext = (context, accessories) => {
+  const { actions } = accessories;
+  
+  merge(context, {
+    ...accessories,
+    actions: map(actions, (action) => (...args) =>
+      context.setState(merge({}, context.state, action(context, ...args))))
+  });
+}
+
+const getContext = (context, accessories) =>
+  (context.state ? updateContext: buildContext)(context, accessories) || context;
 
 export default getContext;
