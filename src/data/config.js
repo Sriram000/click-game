@@ -1,8 +1,6 @@
 const targetConfig = {
     width: 10,
-    height: 10,
-    textSize: "16pt",
-    colors: ["yellow", "khaki", "thistle"],
+    height: 20,
     delay: 1000 * 1.25,
     score: 1,
 }

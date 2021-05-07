@@ -1,7 +1,9 @@
+import background from '../image/mosquito.jpg';
+
 const Target = (targetConfig, state, actions) => {
 
-    const {width, height, textSize} = targetConfig;
-    const { targetX, targetY, color} = state;
+    const {width, height } = targetConfig;
+    const { targetX, targetY } = state;
     const { increaseScore } = actions;
 
     const style = {
@@ -10,13 +12,12 @@ const Target = (targetConfig, state, actions) => {
         top: `${ targetY }%`,
         left: `${ targetX }%`,
         position: "absolute",
-        fontSize: textSize,
-        background: color,
     }
 
     return (
-        <div style = {style} onClick = { increaseScore }> </div>   
+        <img src= {background} style = {style} onClick = { increaseScore }/>        
     );
 }
 
 export default Target;
+
