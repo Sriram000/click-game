@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import getContext from './core/getContext.js';
+import getContext from './core/getContext';
 import context from "./core/context";
-import config from '../src/data/config.js';
-import getInitialState from "./services/getInitialState.js";
-import actions from './services/actions.js';
-import start from './services/start.js';
-import Board from './components/board.js';
-import Target from './components/target.js';
+import config from '../src/data/config';
+import initialState from "./data/initialState";
+import actions from './services/actions';
+import start from './services/start';
+import Board from './components/board';
+import Target from './components/target';
 import Score from './components/score';
 
-const iS = getInitialState({ config });
-
 function App() {
-  const [state, setState] = useState(iS);
+  const [state, setState] = useState(initialState);
   getContext(context, { actions, config, state, setState });
   useEffect(start, []);
 
