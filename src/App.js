@@ -5,20 +5,21 @@ import config from '../src/data/config';
 import initialState from "./data/initialState";
 import actions from './services/actions';
 import start from './services/start';
-import Board from './components/board';
-import Target from './components/target';
 import Score from './components/score';
 import Lives from './components/lives';
+import GameScreen from './components/gameScreen';
+import GameOverScreen from './components/gameOverScreen';
 
 function App() {
   const [state, setState] = useState(initialState);
   getContext(context, { actions, config, state, setState });
   useEffect(start, []);
+  
+  const Screen = state.lives === 0 ? GameOverScreen : GameScreen;
 
   return (
       <div className="App">
-        { Board() }
-        { Target() } 
+        { Screen() } 
         { Score() }
         { Lives() }
       </div>
