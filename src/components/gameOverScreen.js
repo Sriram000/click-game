@@ -1,8 +1,8 @@
 const style = {
     position: "absolute",
-    top: "50%",
-    left: "50%",
-    width: "5%",
+    top: "40%",
+    left: "40%",
+    width: "20%",
     height: "10%",
     background: "red",
     fontSize: "30pt",
