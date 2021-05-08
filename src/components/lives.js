@@ -2,16 +2,16 @@ import context from "../core/context";
 
 const style = {
     position: "absolute",
+    top: "0%",
+    right: "0%",
     width: "5%",
     height: "10%",
-    top: "0%",
-    left: "0%",
     background: "silver",
     fontSize: "30pt",
     textAlign: "center",
 }
 
-const Score = () =>  
-    <div style = {style}> { context.state.score } </div>
-           
-export default Score;
+const Lives = () => 
+    <div style = {style}> { context.state.lives } </div>
+
+export default Lives;

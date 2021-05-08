@@ -8,6 +8,7 @@ import start from './services/start';
 import Board from './components/board';
 import Target from './components/target';
 import Score from './components/score';
+import Lives from './components/lives';
 
 function App() {
   const [state, setState] = useState(initialState);
@@ -19,6 +20,7 @@ function App() {
         { Board() }
         { Target() } 
         { Score() }
+        { Lives() }
       </div>
     );
   }

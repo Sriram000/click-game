@@ -9,7 +9,7 @@ const boardStyle = {
 const Board = () => 
     <div
         style={ boardStyle }
-        onClick = { context.actions.decreaseScore }>
+        onClick = { context.actions.decreaseLives }>
     </div>
 
 export default Board;

@@ -4,19 +4,19 @@ const increaseScore = ({ config, state }) => ({
     score: state.score + config.score,
 });
 
-const decreaseScore = ({ config, state }) => ({
-    score: state.score - config.score,
-});
-
 const moveTarget = ({ config }) => ({ 
     targetX: rndBetween(0, 100 - config.width),
     targetY: rndBetween(0, 100 - config.height), 
 });
 
+const decreaseLives = ({ state }) => ({
+    lives: state.lives - 1,
+});
+
 const actions = {
     increaseScore,
-    decreaseScore,
     moveTarget,
+    decreaseLives,
 };
 
 export default actions;
