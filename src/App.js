@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import getContext from './core/getContext';
+import getContext from '@laufire/resist';
 import config from '../src/data/config';
 import initialState from "./data/initialState";
 import context from "./services/context";
