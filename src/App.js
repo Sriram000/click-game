@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import getContext from '@laufire/resist';
+import updateContext from '@laufire/resist';
 import context from "./core/context";
 import ticker from './services/ticker';
 import Score from './components/score';
@@ -9,7 +9,7 @@ import GameOverScreen from './components/gameOverScreen';
 
 function App() {
   const [state, setState] = useState(context.seed);
-  getContext(context, { state, setState, actions: context.actions });
+  updateContext(context, { state, setState });
   
   useEffect(ticker.start, []);
   
