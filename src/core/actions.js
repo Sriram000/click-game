@@ -1,5 +1,4 @@
 import { rndBetween } from "@laufire/utils/random";
-import InitialState from '../data/initialState';
 
 const increaseScore = ({ config, state }) => ({
     score: state.score + config.score,
@@ -14,7 +13,7 @@ const decreaseLives = ({ state }) => ({
     lives: state.lives - 1,
 });
 
-const restart = () => InitialState;
+const restart = ({ seed }) => seed;
 
 const actions = {
     increaseScore,

@@ -1,4 +1,4 @@
-import context from "../services/context";
+import context from "../core/context";
 
 const Ticker = () => {
     const start = () => {

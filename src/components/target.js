@@ -1,4 +1,4 @@
-import context from "../services/context";
+import context from "../core/context";
 import background from '../image/mosquito.jpg';
 
 const Target = () => {
