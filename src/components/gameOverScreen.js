@@ -1,4 +1,4 @@
-import Restart from './restart';
+import RestartButton from './restartButton';
 
 const style = {
     position: "absolute",
@@ -14,7 +14,7 @@ const style = {
 const GameOverScreen = () =>
     <div style= { style }> 
         <div> GAME OVER </div> 
-        <div>{ Restart() }</div>
+        <div>{ RestartButton() }</div>
     </div>
 
 export default GameOverScreen;

@@ -3,9 +3,9 @@ import context from "../core/context";
 const Ticker = () => {
     const start = () => {
         const { config, actions } = context;
-        const { delay } = config;
+        const { tickerDelay } = config;
         
-        setInterval(actions.moveTarget, delay);
+        setInterval(actions.moveTarget, tickerDelay);
     }
     
     return {
