@@ -4,7 +4,7 @@ import config from '../src/data/config';
 import initialState from "./data/initialState";
 import context from "./services/context";
 import actions from './services/actions';
-import start from './services/start';
+import ticker from './services/ticker';
 import Score from './components/score';
 import Lives from './components/lives';
 import GameScreen from './components/gameScreen';
@@ -13,7 +13,7 @@ import GameOverScreen from './components/gameOverScreen';
 function App() {
   const [state, setState] = useState(initialState);
   getContext(context, { actions, config, state, setState });
-  useEffect(start, []);
+  useEffect(ticker.start, []);
   
   const Screen = state.lives === 0 ? GameOverScreen : GameScreen;
 
