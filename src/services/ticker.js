@@ -5,7 +5,7 @@ const Ticker = () => {
         const { config, actions } = context;
         const { tickerDelay } = config;
         
-        setInterval(actions.moveTarget, tickerDelay);
+        setInterval(actions.moveTargets, tickerDelay);
     }
     
     return {

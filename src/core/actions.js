@@ -4,18 +4,11 @@ const increaseScore = ({ config, state }) => ({
     score: state.score + config.score,
 });
 
-const moveTarget = ({ config }) => ({ 
-   targets: [
-        {
-            x: rndBetween(0, 100 - config.width),
-            y: rndBetween(0, 100 - config.height), 
-        },
-        {
-            x: rndBetween(0, 100 - config.width),
-            y: rndBetween(0, 100 - config.height), 
-        },
-
-    ],
+const moveTargets = ({ config, state }) => ({ 
+    targets: state.targets.map(()=> ({
+        x: rndBetween(0, 100 - config.width),
+        y: rndBetween(0, 100 - config.height), 
+    }))
 });
 
 const decreaseLives = ({ state }) => ({
@@ -26,7 +19,7 @@ const restart = ({ seed }) => seed;
 
 const actions = {
     increaseScore,
-    moveTarget,
+    moveTargets,
     decreaseLives,
     restart,
 };
