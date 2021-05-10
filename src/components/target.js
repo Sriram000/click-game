@@ -4,12 +4,12 @@ import background from '../image/mosquito.jpg';
 const Target = () => {
     const { config, state, actions } = context;
     const { width, height } = config;
-    const { targetX, targetY } = state;
+    const { x, y } = state.target;
 
     const style = {
         position: "absolute",
-        top: `${ targetY }%`,
-        left: `${ targetX }%`,
+        top: `${ y }%`,
+        left: `${ x }%`,
         height: `${ height }%`,
         width: `${ width }%`,
     }
