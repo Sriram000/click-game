@@ -1,5 +1,5 @@
 import config from '../core/config';
-import { rndBetween } from "@laufire/utils/random";
+import { rndBetween, rndString } from "@laufire/utils/random";
 
 const TargetManager = {
 
@@ -9,8 +9,15 @@ const TargetManager = {
     })),
 
     addTarget: (targets) => targets.concat({
+        id: rndString(8), 
         x: rndBetween(0, 100 - config.width),
-        y: rndBetween(0, 100 - config.height), 
+        y: rndBetween(0, 100 - config.height),
+    }),
+
+    getTarget: () => ({
+        id: rndString(8), 
+        x: rndBetween(0, 100 - config.width),
+        y: rndBetween(0, 100 - config.height),
     }),
 }
 

@@ -5,7 +5,7 @@ import { rndString } from "@laufire/utils/random";
 const Target = (target) => {
     const { config, actions } = context;
     const { width, height } = config;
-    const { x, y } = target;
+    const { id, x, y } = target;
 
     const style = {
         position: "absolute",
@@ -17,7 +17,7 @@ const Target = (target) => {
 
     return (
         <img 
-            key={ rndString(8) }
+            key={ id }
             src={ background }
             style={ style }
             onClick={ actions.increaseScore }/>        
