@@ -1,24 +1,15 @@
-import { rndBetween } from "@laufire/utils/random";
+import TargetManager from "../services/targetManager";
 
 const increaseScore = ({ config, state }) => ({
     score: state.score + config.score,
 });
 
-const moveTargets = ({ config, state }) => ({ 
-    targets: state.targets.map(()=> ({
-        x: rndBetween(0, 100 - config.width),
-        y: rndBetween(0, 100 - config.height), 
-    }))
+const moveTargets = ({ state }) => ({
+    targets: TargetManager.moveTargets(state.targets),
 });
-
-const addTarget = ({ config, state }) => ({ 
-    targets: [
-        ...state.targets,
-        {
-            x: rndBetween(0, 100 - config.width),
-            y: rndBetween(0, 100 - config.height), 
-        },
-    ]
+   
+const addTarget = ({ state }) => ({
+    targets: TargetManager.addTarget(state.targets),
 });
 
 const decreaseLives = ({ state }) => ({
