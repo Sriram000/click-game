@@ -1,10 +1,10 @@
 import context from "../core/context";
 import background from '../image/mosquito.jpg';
 
-const Target = () => {
-    const { config, state, actions } = context;
+const Target = (target) => {
+    const { config, actions } = context;
     const { width, height } = config;
-    const { x, y } = state.target;
+    const { x, y } = target;
 
     const style = {
         position: "absolute",

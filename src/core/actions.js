@@ -5,10 +5,17 @@ const increaseScore = ({ config, state }) => ({
 });
 
 const moveTarget = ({ config }) => ({ 
-   target: {
-        x: rndBetween(0, 100 - config.width),
-        y: rndBetween(0, 100 - config.height), 
-   }
+   targets: [
+        {
+            x: rndBetween(0, 100 - config.width),
+            y: rndBetween(0, 100 - config.height), 
+        },
+        {
+            x: rndBetween(0, 100 - config.width),
+            y: rndBetween(0, 100 - config.height), 
+        },
+
+    ],
 });
 
 const decreaseLives = ({ state }) => ({
