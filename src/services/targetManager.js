@@ -14,10 +14,10 @@ const TargetManager = {
         y: rndBetween(0, 100 - config.height),
     }),
 
-    getTarget: () => ({
+    getTarget: ({ x, y }) => ({
         id: rndString(8), 
-        x: rndBetween(0, 100 - config.width),
-        y: rndBetween(0, 100 - config.height),
+        x: x !== undefined ? x : rndBetween(0, 100 - config.width),
+        y: y !== undefined ? y : rndBetween(0, 100 - config.height),
     }),
 }
 
