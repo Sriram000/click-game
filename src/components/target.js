@@ -1,5 +1,6 @@
 import context from "../core/context";
 import background from '../image/mosquito.jpg';
+import { rndString } from "@laufire/utils/random";
 
 const Target = (target) => {
     const { config, actions } = context;
@@ -15,9 +16,11 @@ const Target = (target) => {
     }
 
     return (
-        <img src= {background}
-            style = {style}
-            onClick = { actions.increaseScore }/>        
+        <img 
+            key={ rndString(8) }
+            src={ background }
+            style={ style }
+            onClick={ actions.increaseScore }/>        
     );
 }
 
