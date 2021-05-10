@@ -8,13 +8,10 @@ const TargetManager = {
         y: rndBetween(0, 100 - config.height), 
     })),
 
-    addTarget: (targets) =>  [
-        ...targets,
-        {
-            x: rndBetween(0, 100 - config.width),
-            y: rndBetween(0, 100 - config.height), 
-        },
-    ],
+    addTarget: (targets) => targets.concat({
+        x: rndBetween(0, 100 - config.width),
+        y: rndBetween(0, 100 - config.height), 
+    }),
 }
 
 
