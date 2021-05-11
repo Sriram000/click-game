@@ -6,8 +6,8 @@ const { getTarget } = TargetManager;
 const seed = { 
   targets: [
     getTarget({
-      x: 50 - config.width / 2,
-      y: 50 - config.height / 2,
+      x: 50,
+      y: 50,
       type: "super",
     }),
   ],

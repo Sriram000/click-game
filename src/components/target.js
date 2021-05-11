@@ -1,24 +1,22 @@
 import context from "../core/context";
-import background from '../image/mosquito.png';
 
 const Target = (target) => {
-    const { config, actions } = context;
-    const { width, height } = config;
-    const { id, x, y } = target;
+    const { actions } = context;
+    const { id, x, y, height, width } = target;
 
     const style = {
         position: "absolute",
-        top: `${ y }%`,
-        left: `${ x }%`,
-        height: `${ target.size * height }vw`,
-        width: `${ target.size * width }vw`,
+        top: `${ y - height / 2 }%`,
+        left: `${ x - width / 2 }%`,
+        height: `${ height }vw`,
+        width: `${ width }vw`,
         cursor: "crossHair",
     }
 
     return (
         <img 
             key={ id }
-            src={ background }
+            src={ target.image }
             style={ style }
             onClick={ () => actions.increaseScore(target) }/>        
     );

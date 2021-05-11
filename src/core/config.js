@@ -1,17 +1,22 @@
+import normalTargetImage from '../image/mosquito.png';
+import superTargetImage from '../image/ant.png';
+
 const config = {
-    height: 10,
-    width: 20,
     tickerDelay: 1000 * 1.25,
     lives: 3,
     maxTargets: 3,
     targetTypes: {
         normal: {
-            size: 1,
             score: 1,
+            image: normalTargetImage, 
+            height: 10,
+            width: 20,
         },
         super:{
-            size: 0.5,
             score: 5,
+            image: superTargetImage, 
+            height: 5,
+            width: 10,
         },
     },
 }
