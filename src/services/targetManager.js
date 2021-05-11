@@ -16,7 +16,9 @@ const moveTargets = (targets) => targets.map(() => ({
     y: getRandomY(),
 }));
 
-const addTarget = (targets) => targets.concat(getTarget());
+const addTarget = (targets) => targets.length < config.maxTargets
+    ? targets.concat(getTarget())
+    : targets;
 
 const TargetManager = {
     moveTargets,
