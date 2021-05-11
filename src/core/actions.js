@@ -1,7 +1,7 @@
 import TargetManager from "../services/targetManager";
 
-const increaseScore = ({ config, state }) => ({
-    score: state.score + config.score,
+const increaseScore = ({ state }, target) => ({
+    score: state.score + target.score,
 });
 
 const moveTargets = ({ state }) => ({

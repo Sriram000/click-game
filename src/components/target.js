@@ -10,8 +10,8 @@ const Target = (target) => {
         position: "absolute",
         top: `${ y }%`,
         left: `${ x }%`,
-        height: `${ height }vw`,
-        width: `${ width }vw`,
+        height: `${ target.size * height }vw`,
+        width: `${ target.size * width }vw`,
         cursor: "crossHair",
     }
 
@@ -20,7 +20,7 @@ const Target = (target) => {
             key={ id }
             src={ background }
             style={ style }
-            onClick={ actions.increaseScore }/>        
+            onClick={ () => actions.increaseScore(target) }/>        
     );
 }
 
