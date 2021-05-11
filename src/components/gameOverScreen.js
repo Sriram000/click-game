@@ -14,10 +14,14 @@ const style = {
     textAlign: "center",
 }
 
+const buttonStyle = {
+    cursor: "pointer",
+}
+
 const GameOverScreen = () =>
     <div style= { style }> 
         <div> GAME OVER </div> 
-        <div>{ RestartButton() }</div>
+        <div style={ buttonStyle }>{ RestartButton() }</div>
     </div>
 
 export default GameOverScreen;
