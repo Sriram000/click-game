@@ -16,6 +16,10 @@ const decreaseLives = ({ state }) => ({
     lives: state.lives - 1,
 });
 
+const removeTarget = (context, target) => ({
+    targets: TargetManager.removeTarget(context.state.targets, target),
+});
+
 const restart = ({ seed }) => seed;
 
 const actions = {
@@ -24,6 +28,7 @@ const actions = {
     addTarget,
     decreaseLives,
     restart,
+    removeTarget,
 };
 
 export default actions;

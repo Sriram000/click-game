@@ -30,10 +30,14 @@ const addTarget = (targets) => targets.length < maxTargets
     ? targets.concat(getTarget())
     : targets;
 
+const removeTarget = (targets, target) => 
+    targets.filter((current) => current.id !== target.id);
+
 const TargetManager = {
     moveTargets,
     addTarget,   
     getTarget,
+    removeTarget,
 }
 
 export default TargetManager;
