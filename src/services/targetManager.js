@@ -1,13 +1,16 @@
 import config from '../core/config';
-import { rndBetween, rndString } from "@laufire/utils/random";
+import { rndBetween, rndString, rndValue } from "@laufire/utils/random";
+import { keys } from '@laufire/utils/collection';
 
 const { maxTargets, targetTypes } = config;
+const targetTypeKeys = keys(targetTypes);
 
 const getRandomX = ({ width }) => rndBetween(width / 2, 100 - width / 2);
 
 const getRandomY = ({ height }) => rndBetween(height / 2, 100 - height / 2);
 
-const getTarget = ({ x, y, type = "normal" } = {}) => {
+const getTarget = ({ x, y, type } = {}) => {
+    type = type || rndValue(targetTypeKeys);
     const typeConfig = targetTypes[type];
 
     return {

@@ -8,7 +8,6 @@ const seed = {
     getTarget({
       x: 50,
       y: 50,
-      type: "super",
     }),
   ],
   score: 0,
