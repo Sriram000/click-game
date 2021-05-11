@@ -1,6 +1,5 @@
 import context from "../core/context";
-import background from '../image/mosquito.jpg';
-import { rndString } from "@laufire/utils/random";
+import background from '../image/mosquito.png';
 
 const Target = (target) => {
     const { config, actions } = context;
@@ -11,8 +10,9 @@ const Target = (target) => {
         position: "absolute",
         top: `${ y }%`,
         left: `${ x }%`,
-        height: `${ height }%`,
-        width: `${ width }%`,
+        height: `${ height }vw`,
+        width: `${ width }vw`,
+        cursor: "crossHair",
     }
 
     return (
