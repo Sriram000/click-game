@@ -7,12 +7,12 @@ import Game from './components/game';
 function App() {
   const [state, setState] = useState(context.seed);
   updateContext(context, { state, setState });
-  
+
   useEffect(ticker.start, []);
   
   return (
       <div className="App">
-        { Game() }
+      { Game() }
       </div>
     );
   }

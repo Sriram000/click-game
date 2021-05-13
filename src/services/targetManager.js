@@ -22,6 +22,7 @@ const getTarget = ({ x, y, type } = {}) => {
 }
 
 const moveTargets = (targets) => targets.map((target) => ({
+    ...target,
     x: getRandomX(target),
     y: getRandomY(target),
 }));
