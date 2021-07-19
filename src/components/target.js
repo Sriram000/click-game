@@ -14,6 +14,7 @@ const Target = (target) => {
     }
 
     return (
+        // eslint-disable-next-line jsx-a11y/alt-text
         <img 
             key={ id }
             src={ target.image }

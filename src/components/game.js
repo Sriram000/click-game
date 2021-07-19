@@ -8,7 +8,7 @@ const Game = () => {
   const Screen = context.state.lives === 0 ? GameOverScreen : GameScreen;
 
   return (
-      <div className="App">
+      <div>
         { Screen() } 
         { Score() }
         { Lives() }
