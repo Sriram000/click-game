@@ -1,20 +1,20 @@
-import normalTargetImage from '../image/mosquito.png';
-import superTargetImage from '../image/ant.png';
+import mosquitoImage from '../image/mosquito.png';
+import antImage from '../image/ant.png';
 
 const config = {
     tickerDelay: 1000 * 1.25,
     lives: 3,
     maxTargets: 3,
-    targetTypes: {
-        normal: {
+    targets: {
+        mosquito: {
             score: 1,
-            image: normalTargetImage, 
+            image: mosquitoImage, 
             height: 10,
             width: 20,
         },
-        super:{
+        ant:{
             score: 5,
-            image: superTargetImage, 
+            image: antImage, 
             height: 5,
             width: 10,
         },
