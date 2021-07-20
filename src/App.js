@@ -3,6 +3,7 @@ import updateContext from '@laufire/resist';
 import context from "./core/context";
 import ticker from './services/ticker';
 import Game from './components/game';
+import './App.css';
 
 function App() {
   const [state, setState] = useState(context.seed);
