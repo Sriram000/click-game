@@ -5,9 +5,8 @@ const style = {
     top: "0%",
     right: "0%",
     width: "5%",
-    height: "10%",
     background: "silver",
-    fontSize: "30pt",
+    fontSize: "5vw",
     textAlign: "center",
 }
 

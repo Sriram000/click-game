@@ -3,11 +3,10 @@ import context from "../core/context";
 const style = {
     position: "absolute",
     width: "5%",
-    height: "10%",
     top: "0%",
     left: "0%",
     background: "silver",
-    fontSize: "30pt",
+    fontSize: "5vw",
     textAlign: "center",
 }
 
