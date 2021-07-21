@@ -2,7 +2,7 @@ import config from '../core/config';
 import { rndBetween, rndString, rndValue } from "@laufire/utils/random";
 import { keys } from '@laufire/utils/collection';
 
-const { maxTargets, targets } = config;
+const { maxTargets, targets, powers } = config;
 const targetTypeKeys = keys(targets);
 
 const getRandomX = ({ width }) => rndBetween(width / 2, 100 - width / 2);
@@ -34,11 +34,22 @@ const addTarget = (targets) => targets.length < maxTargets
 const removeTarget = (targets, target) => 
     targets.filter((current) => current.id !== target.id);
 
+const removeRandomTargets = (targets) => {
+    let count = rndBetween(powers.bomb.minimum, powers.bomb.maximum);
+    let result = targets;
+    while( count-- ) {
+        const i = rndBetween(0, result.length - 1);
+        result = result.filter((dummy, idx) => idx !== i)
+    }
+    return result;
+};
+
 const TargetManager = {
     moveTargets,
     addTarget,   
     getTarget,
     removeTarget,
+    removeRandomTargets,
 }
 
 export default TargetManager;

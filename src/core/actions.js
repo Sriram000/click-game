@@ -20,6 +20,10 @@ const removeTarget = (context, target) => ({
     targets: TargetManager.removeTarget(context.state.targets, target),
 });
 
+const removeRandomTargets = ({ state }) => ({
+    targets: TargetManager.removeRandomTargets(state.targets),
+});
+
 const restart = ({ seed }) => seed;
 
 const actions = {
@@ -29,6 +33,7 @@ const actions = {
     decreaseLives,
     restart,
     removeTarget,
+    removeRandomTargets,
 };
 
 export default actions;
