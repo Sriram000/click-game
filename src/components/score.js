@@ -2,7 +2,6 @@ import context from "../core/context";
 
 const style = {
     position: "absolute",
-    width: "5%",
     top: "0%",
     left: "0%",
     background: "silver",

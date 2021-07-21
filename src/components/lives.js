@@ -4,7 +4,6 @@ const style = {
     position: "absolute",
     top: "0%",
     right: "0%",
-    width: "5%",
     background: "silver",
     fontSize: "5vw",
     textAlign: "center",
