@@ -34,22 +34,33 @@ const addTarget = (targets) => targets.length < maxTargets
 const removeTarget = (targets, target) => 
     targets.filter((current) => current.id !== target.id);
 
-const removeRandomTargets = (targets) => {
-    let count = rndBetween(powers.bomb.minimum, powers.bomb.maximum);
-    let result = targets;
-    while( count-- ) {
-        const i = rndBetween(0, result.length - 1);
-        result = result.filter((dummy, idx) => idx !== i)
+const getRandomTargets = (targets) => {
+    const result = [];
+    const count = Math.min(powers.bomb.maximum, targets.length);
+
+    while(result.length < count) {
+        let i = rndBetween(0, targets.length-1);
+        if( !result.includes(targets[i]) ) {
+            result.push(targets[i]);
+        }
     }
     return result;
-};
+}
+
+const removeTargets = (targets, targetsToRemove) =>
+    targets.filter((target) => !targetsToRemove.includes(target));
+
+const getTargetsScore = (targets) => 
+    targets.reduce((acc, target) => acc + target.score, 0 )
 
 const TargetManager = {
     moveTargets,
     addTarget,   
     getTarget,
     removeTarget,
-    removeRandomTargets,
+    removeTargets,
+    getRandomTargets,
+    getTargetsScore,
 }
 
 export default TargetManager;

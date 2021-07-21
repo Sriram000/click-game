@@ -20,9 +20,14 @@ const removeTarget = (context, target) => ({
     targets: TargetManager.removeTarget(context.state.targets, target),
 });
 
-const removeRandomTargets = ({ state }) => ({
-    targets: TargetManager.removeRandomTargets(state.targets),
-});
+const removeRandomTargets = ({ state }) => {
+    const targetsToRemove = TargetManager.getRandomTargets(state.targets);
+
+   return {
+        targets: TargetManager.removeTargets(state.targets, targetsToRemove),
+        score: state.score + TargetManager.getTargetsScore(targetsToRemove),
+    }
+};
 
 const restart = ({ seed }) => seed;
 
