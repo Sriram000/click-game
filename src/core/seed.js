@@ -10,6 +10,7 @@ const seed = {
       y: 50,
     }),
   ],
+  powers: [],
   score: 0,
   lives: config.lives,
 }

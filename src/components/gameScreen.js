@@ -7,7 +7,11 @@ const GameScreen = () =>
     <>
         { Board(context) }
         { context.state.targets.map(Target) }
-        { Power() }
+        { context.state.powers.map(Power) }
     </>
 
 export default GameScreen;
+
+
+
+//add logic bomb, remove state.powers reset, no move//

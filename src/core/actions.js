@@ -1,3 +1,4 @@
+import PowerManager from "../services/powerManager";
 import TargetManager from "../services/targetManager";
 
 const increaseScore = ({ state }, target) => ({
@@ -31,6 +32,14 @@ const removeRandomTargets = ({ state }) => {
 
 const restart = ({ seed }) => seed;
 
+const addPower = ({ state }) => ({
+    powers: TargetManager.addPower(state.powers),
+});
+
+const removePower = (context) => ({
+    powers: [],
+});
+
 const actions = {
     increaseScore,
     moveTargets,
@@ -39,6 +48,8 @@ const actions = {
     restart,
     removeTarget,
     removeRandomTargets,
+    addPower,
+    removePower,
 };
 
 export default actions;

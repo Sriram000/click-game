@@ -1,4 +1,5 @@
 import context from "../core/context";
+import bomb from '../components/gameScreen';
 
 const Ticker = () => {
     const start = () => {
@@ -8,6 +9,7 @@ const Ticker = () => {
         setInterval(() => {
             actions.moveTargets();
             actions.addTarget();
+            bomb();
         }, tickerDelay);
     }
     
