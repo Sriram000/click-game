@@ -1,6 +1,6 @@
-import { rndBetween } from "@laufire/utils/random";
 import PowerManager from "../services/powerManager";
 import TargetManager from "../services/targetManager";
+import context from "./context";
 
 const increaseScore = ({ state }, target) => ({
     score: state.score + target.score,
@@ -41,6 +41,10 @@ const removePower = ({ state }) => ({
     powers: PowerManager.removePower(state.powers),
 });
 
+const removeClickedPower = (context, power) => ({
+    powers: PowerManager.removeClickedPower(context.state.powers, power),
+});
+
 const actions = {
     increaseScore,
     moveTargets,
@@ -51,6 +55,7 @@ const actions = {
     removeRandomTargets,
     addPower,
     removePower,
+    removeClickedPower,
 };
 
 export default actions;

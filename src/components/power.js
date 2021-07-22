@@ -19,7 +19,11 @@ const Power = (power) => {
         key={ id }
         src={ power.image }
         style={ style }
-        onClick={ () => context.actions.removeRandomTargets() }
+        onClick={ () => {
+         context.actions.removeRandomTargets()
+         context.actions.removeClickedPower(power)
+         }}
+            
     />
     );
 }

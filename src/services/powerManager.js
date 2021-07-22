@@ -1,6 +1,7 @@
 import { rndBetween, rndValue, rndString } from "@laufire/utils/random";
 import { keys } from '@laufire/utils/collection';
 import config from "../core/config";
+import Power from "../components/power";
 
 const { powers } = config;
 const powerKeys = keys(powers);
@@ -31,10 +32,14 @@ const removePower = (powers) => (powers.length === 1 && rndBetween(1, removeValu
     ? [] 
     : powers;
 
+const removeClickedPower = (powers, power) =>
+    powers.filter((current) => current.id !== power.id );
+
 const PowerManager = {
     getPower,
     addPower,
-    removePower
+    removePower,
+    removeClickedPower,
 };
 
 export default PowerManager;
