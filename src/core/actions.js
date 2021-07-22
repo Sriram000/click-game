@@ -1,3 +1,4 @@
+import { rndBetween } from "@laufire/utils/random";
 import PowerManager from "../services/powerManager";
 import TargetManager from "../services/targetManager";
 
@@ -33,11 +34,11 @@ const removeRandomTargets = ({ state }) => {
 const restart = ({ seed }) => seed;
 
 const addPower = ({ state }) => ({
-    powers: TargetManager.addPower(state.powers),
+    powers: PowerManager.addPower(state.powers),
 });
 
-const removePower = (context) => ({
-    powers: [],
+const removePower = ({ state }) => ({
+    powers: PowerManager.removePower(state.powers),
 });
 
 const actions = {

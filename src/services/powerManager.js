@@ -1,15 +1,15 @@
 import { rndBetween, rndValue, rndString } from "@laufire/utils/random";
-import { Keys } from '@laufire/utils/collection';
+import { keys } from '@laufire/utils/collection';
 import config from "../core/config";
 
 const { powers } = config;
-const powerKeys = Keys(powers);
+const powerKeys = keys(powers);
 
 const getRandomX = ({ width }) => rndBetween(width / 2, 100 - width / 2);
 
 const getRandomY = ({ height }) => rndBetween(height / 2, 100 - height / 2);
 
-const getPower = ({ x, y, type }) => {
+const getPower = ({ x, y, type } = {}) => {
     type = type || rndValue(powerKeys);
     const typeConfig = powers[type];
 
@@ -21,13 +21,18 @@ const getPower = ({ x, y, type }) => {
     };
 }
 
-const addPower = (powers) => rndBetween(1, 5) === 1 
+const addPower = (powers) => rndBetween(1, 1) === 1 && powers.length === 0
     ? powers.concat(getPower())
+    : powers;
+
+const removePower = (powers) => (powers.length === 1 && rndBetween(1, 2) === 1)
+    ? [] 
     : powers;
 
 const PowerManager = {
     getPower,
     addPower,
+    removePower
 };
 
 export default PowerManager;
