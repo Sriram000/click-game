@@ -1,7 +1,6 @@
 import { rndBetween, rndValue, rndString } from "@laufire/utils/random";
 import { keys } from '@laufire/utils/collection';
 import config from "../core/config";
-import Power from "../components/power";
 
 const { powers } = config;
 const powerKeys = keys(powers);

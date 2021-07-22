@@ -1,6 +1,5 @@
 import PowerManager from "../services/powerManager";
 import TargetManager from "../services/targetManager";
-import context from "./context";
 
 const increaseScore = ({ state }, target) => ({
     score: state.score + target.score,
