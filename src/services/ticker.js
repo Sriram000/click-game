@@ -1,15 +1,19 @@
 import context from "../core/context";
 
+const masterLoop = [
+    "moveTargets",
+    "addTarget",
+    "removePower",
+    "addPower",
+];
+
 const Ticker = () => {
     const start = () => {
-        const { config, actions } = context;
+        const { config } = context;
         const { tickerDelay } = config;
         
         setInterval(() => {
-            actions.moveTargets();
-            actions.addTarget();
-            actions.removePower();
-            actions.addPower();
+            masterLoop.forEach((data) => context.actions[data]());
         }, tickerDelay);
     }
     
