@@ -1,6 +1,7 @@
 import mosquitoImage from '../image/mosquito.png';
 import antImage from '../image/ant.png';
 import bombImage from '../image/bomb.png';
+import spiderImage from '../image/spider.png';
 
 const config = {
     tickerDelay: 1000 * 1.25,
@@ -12,12 +13,21 @@ const config = {
             image: mosquitoImage, 
             height: 10,
             width: 20,
+            lives: 1,
         },
         ant:{
             score: 5,
             image: antImage, 
             height: 5,
             width: 10,
+            lives: 1,
+        },
+        spider:{
+            score: 10,
+            image: spiderImage, 
+            height: 2.5,
+            width: 5,
+            lives: 3,
         },
     },
     maxPowers: 1,

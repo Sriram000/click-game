@@ -19,10 +19,7 @@ const Target = (target) => {
             key={ id }
             src={ target.image }
             style={ style }
-            onClick={ () => {
-                actions.removeTarget(target);
-                actions.increaseScore(target);
-            } }/>        
+            onClick={ () => actions.decreaseTargetLives(target) }/>        
     );
 }
 

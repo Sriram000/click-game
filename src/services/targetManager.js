@@ -51,7 +51,19 @@ const removeTargets = (targets, targetsToRemove) =>
     targets.filter((target) => !targetsToRemove.includes(target));
 
 const getTargetsScore = (targets) => 
-    targets.reduce((acc, target) => acc + target.score, 0 )
+    targets.reduce((acc, target) => acc + target.score, 0 );
+
+const decreaseTargetLives = (targets, current) => 
+    targets.map((target) =>
+        target.id === current.id 
+        ? {
+            ...current,
+            lives: Math.max(current.lives - 1, 0),
+        }
+        : target
+    )
+
+const getDeadTargets = (targets) => targets.filter((target) => target.lives <= 0);
 
 const TargetManager = {
     moveTargets,
@@ -61,7 +73,8 @@ const TargetManager = {
     removeTargets,
     getRandomTargets,
     getTargetsScore,
+    decreaseTargetLives,
+    getDeadTargets,
 }
 
 export default TargetManager;
-

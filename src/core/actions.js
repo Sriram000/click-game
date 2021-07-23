@@ -44,6 +44,19 @@ const removeClickedPower = (context, power) => ({
     powers: PowerManager.removeClickedPower(context.state.powers, power),
 });
 
+const decreaseTargetLives = ({ state }, target) => ({
+    targets: TargetManager.decreaseTargetLives(state.targets, target),
+});
+
+const removeDeadTargets = ({ state }) => {
+    const targetsToRemove = TargetManager.getDeadTargets(state.targets);
+
+    return ({
+        targets: TargetManager.removeTargets(state.targets, targetsToRemove),
+        score: state.score + TargetManager.getTargetsScore(targetsToRemove),
+    });
+}
+
 const actions = {
     increaseScore,
     moveTargets,
@@ -55,6 +68,8 @@ const actions = {
     addPower,
     removePower,
     removeClickedPower,
+    decreaseTargetLives,
+    removeDeadTargets,
 };
 
 export default actions;

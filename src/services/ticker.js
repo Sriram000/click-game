@@ -5,6 +5,7 @@ const masterLoop = [
     "addTarget",
     "removePower",
     "addPower",
+    "removeDeadTargets",
 ];
 
 const Ticker = () => {
